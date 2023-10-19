@@ -1,33 +1,30 @@
 <?php
 
+$message = "";
 if (isset($_POST['submit'])) {
-    $allowed_type = ['png', 'jpg', 'jpeg', 'gif', 'svg'];
-    if (!empty($_FILES['upload']['name'])) {
-        $file = $_FILES['upload'];
+    $allowed_types = ['png', 'jpg', 'jpeg', 'gif', 'svg'];
+    if (!empty($_FILES['fileToUpload']['name'])) {
+        $file = $_FILES['fileToUpload'];
         $fileName = $file['name'];
         $fileSize = $file['size'];
         $fileTemp = $file['tmp_name'];
-        $tragetDir = "uploads/${fileName}";
+        $targetDir = "uploads/" . $fileName;
 
         $fileType = explode(".", $fileName);
         $fileType = strtolower(end($fileType));
 
-        // validate array method
-
-        if(in_array($fileType, $allowed_type)){
-            if($file_size <= 1000000){
-                move_uploaded_file($fileTemp, $tragetDir);
-                $message = "Uploaded file";
+        if (in_array($fileType, $allowed_types)) {
+            if ($fileSize <= 1000000) {
+                move_uploaded_file($fileTemp, $targetDir);
+                $message = "File uploaded successfully";
+            } else {
+                $message = "File size is too big";
             }
-            else{
-                echo "file size too big";
-            }
-        }
-        else{
-            echo "not allowed";
+        } else {
+            $message = "File type not allowed";
         }
     } else {
-        $message = "Chose a file";
+        $message = "Please choose a file";
     }
 }
 ?>
@@ -36,12 +33,12 @@ if (isset($_POST['submit'])) {
 <html>
 
 <body>
-    <h1><?= $message ? $message : ""; ?></h1>
+    <h1><?= $message ?></h1>
     <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
         Select file to upload:
         <input type="file" name="fileToUpload" id="fileToUpload">
         <br>
-        <input type="submit" value="submit" name="submit">
+        <input type="submit" value="Submit" name="submit">
     </form>
 
 </body>
