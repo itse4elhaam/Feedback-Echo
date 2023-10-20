@@ -1,3 +1,5 @@
+<?php include "./config/db.php"; ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,20 +14,20 @@
 <body>
   <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
     <div class="container">
-      <a class="navbar-brand" href="#">Traversy Media</a>
+      <a class="navbar-brand" href="#">TrueDevs</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/php-crash/feedback/index.html">Home</a>
+            <a class="nav-link" href="/practice app/feedback app/index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/php-crash/feedback/feedback.html">Feedback</a>
+            <a class="nav-link" href="/practice app/feedback app/feedback.php">Feedback</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/php-crash/feedback/about.html">About</a>
+            <a class="nav-link" href="/practice app/feedback app/about.php">About</a>
           </li>
         </ul>
       </div>
