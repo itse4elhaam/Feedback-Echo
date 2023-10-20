@@ -18,5 +18,4 @@ List the key features of your feedback site. You can include:
 
 ## Acknowledgements
 
-These are basically my follow along notes from the amazing crash course by Traversy Media:
-(PHP Crash Course)[https://www.youtube.com/watch?v=BUCiSSyIGGU&pp=ygULcGhwIHByb2plY3Q%3D]
+These are basically my follow-along notes from the [amazing crash course by Traversy Media.](https://www.youtube.com/watch?v=BUCiSSyIGGU&pp=ygULcGhwIHByb2plY3Q%3D)
